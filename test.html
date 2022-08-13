@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Foo</title></head>
+<script type="text/javascript">
+"use strict";
+
+var javascript_DOM_methods_are_efficient = false;
+
+function displayResult() {
+    var results = document.getElementById('results');
+    if (javascript_DOM_methods_are_efficient) {
+        results.append(document.createTextNode("extraordinary"));
+        results.append(document.createElement('br'));
+    } else {
+        results.innerHTML += "extraordinary<br />";
+    }
+}
+
+function init() {
+    document.getElementById("eric").addEventListener( "click", displayResult, false );
+}
+
+document.addEventListener( "DOMContentLoaded", init, false );
+</script>
+<body>
+    <form name="form">
+        <button type="button" id="eric">half a button</button>
+    </form>
+    <div id="results">
+    </div>
+</body>
