@@ -74,6 +74,10 @@ main {
 
 #description-input {
   resize: none;
+    border: 1px solid #ccc;
+    z-index: 0;
+    font-family: 'Verdana';
+    font-size: 0.875em;
 }
 
 /* General config */

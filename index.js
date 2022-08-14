@@ -79,7 +79,7 @@ function updateCardsIndicativos(array) {
 }
 
 // ========= Botao Salvar ========= //
-botaoSalvar = document.addEventListener('submit', function(e){
+botaoSalvar = document.addEventListener('submit', function (e) {
     e.preventDefault();
     displayCard();
 });
@@ -139,23 +139,38 @@ function carregarElementosNaTela(array) {
     listaDeCards.innerHTML = "";
 
     array.forEach(function (card, index) {
-        listaDeCards.innerHTML += `<div id="data">
-        <h3>${card.titulo}</h3>
-        <p><strong>Linguagem/Skill:</strong> ${card.skill}</p>
-        <p><strong>Categoria:</strong> ${card.categoria}</p>
-        <textarea cols="30" rows="10">
-        ${card.descricao}
-        </textarea>
-        <div id="card-botton">
-            <button id="bin" type="button" onclick="deleteCard(${index})"><img src="./images/bin.png" alt="Remover"></button>
-            <button id="edit" type="button" onclick="editCard(${index})"><img src="./images/edit.png" alt="Editar"></button>
-            <a href="${card.video}" target="_blank">
-            <button id="video" type="button">
-            <img src="./images/video.png" alt="Remover">
-            </button>
-            </a>
-        </div>
-    </div>`;
+        if (card.video == "") {
+            listaDeCards.innerHTML += `<div id="data">
+            <h3>${card.titulo}</h3>
+            <p><strong>Linguagem/Skill:</strong> ${card.skill}</p>
+            <p><strong>Categoria:</strong> ${card.categoria}</p>
+            <textarea cols="30" rows="10">
+            ${card.descricao}
+            </textarea>
+            <div id="card-botton">
+                <button id="bin" type="button" onclick="deleteCard(${index})"><img src="./images/bin.png" alt="Remover"></button>
+                <button id="edit" type="button" onclick="editCard(${index})"><img src="./images/edit.png" alt="Editar"></button>
+            </div>
+        </div>`;
+        } else {
+            listaDeCards.innerHTML += `<div id="data">
+            <h3>${card.titulo}</h3>
+            <p><strong>Linguagem/Skill:</strong> ${card.skill}</p>
+            <p><strong>Categoria:</strong> ${card.categoria}</p>
+            <textarea cols="30" rows="10">
+            ${card.descricao}
+            </textarea>
+            <div id="card-botton">
+                <button id="bin" type="button" onclick="deleteCard(${index})"><img src="./images/bin.png" alt="Remover"></button>
+                <button id="edit" type="button" onclick="editCard(${index})"><img src="./images/edit.png" alt="Editar"></button>
+                <a href="${card.video}" target="_blank">
+                <button id="video" type="button">
+                <img src="./images/video.png" alt="Remover">
+                </button>
+                </a>
+            </div>
+        </div>`;
+        }
     });
 }
 
@@ -273,7 +288,7 @@ function saveEdition(cardIndex) {
                 "[id='description-input']"
             ).value = ``;
             document.querySelector("[id='video-input']").value = ``;
-            
+
             //Atualizar os botoes
             let formButtons = document.getElementById('buttons');
             formButtons.innerHTML = '';
@@ -308,7 +323,7 @@ function cancelEdition(cardIndex) {
                 "[id='description-input']"
             ).value = ``;
             document.querySelector("[id='video-input']").value = ``;
-            
+
             //Alterar os botoes do formulario
             let formButtons = document.getElementById('buttons');
             formButtons.innerHTML = '';
