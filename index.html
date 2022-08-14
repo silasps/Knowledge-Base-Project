@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <link rel="shortcut icon" href="./images/Knowledge book.png" type="image/x-icon">
     <script src="index.js" defer></script>
     <title>DEVin Knowledge</title>
-    
+
 </head>
+
 <body>
     <main>
         <div class="left-container">
@@ -25,36 +27,35 @@
 
             </div>
             <div class="form">
-                <form class="main-form" name="main-form" action="submit" method="post">
+                <form class="main-form">
                     <span for="title-input">Título</span>
-                    <input id="title-input" type="input" placeholder="Digite um título" minlength="8" maxlength="64" required>
-                    
+                    <input id="title-input" type="input" placeholder="Digite um título" minlength="8" maxlength="64"
+                        required>
+
                     <span for="skill-input">Linguagem/Skill</span>
-                    <input id="skill-input" type="input" placeholder="Digite uma linguagem ou skill" minlength="4" maxlength="16" required>
-                    
+                    <input id="skill-input" type="input" placeholder="Digite uma linguagem ou skill" minlength="4"
+                        maxlength="16" required>
+
                     <span for="category-input">Categoria</span>
                     <select id="category-input" name="category-input" value required>
                         <option value="FrontEnd">FrontEnd</option>
                         <option value="BackEnd">BackEnd</option>
                         <option value="FullStack">FullStack</option>
-                        <option value="Comportamental/Soft">Comportamental/SoftSkill</option>
+                        <option value="SoftSkill">Comportamental/SoftSkill</option>
                     </select>
-                    
+
                     <span for="description-input">Descrição</span>
-                    <textarea id="description-input" name="Descrição-da-dica" cols="30" rows="10" minlength="32" maxlength="512" required>
+                    <textarea id="description-input" name="Descrição-da-dica" cols="30" rows="10" minlength="32"
+                        maxlength="512" required>
                     </textarea>
-                    
+
                     <span class="video">Video do YouTube</span>
                     <input id="video-input" type="url" placeholder="https://suaurl.com">
-                    
-                    <div class="buttons">
+
+                    <div id="buttons">
                         <button class="btn-erase" type="reset">Limpar</button>
-                        <button id="btn-save1" class="btn-save" type="button" onclick="saveEdition()">Salvar</button>
+                        <button id="btn-save1" class="btn-save" type="submit">Salvar</button>
                     </div>
-                    <!-- <form>
-                        <input type="text" />
-                        <button type="button" onclick="entrar()">Enviar</button>
-                      </form> Para esta funcao entrar() funcionar tem que ser arrow function -->
                 </form>
             </div>
         </div>
@@ -84,9 +85,11 @@
             </div>
 
             <div class="search">
-                <input id="searchBar" class="searchBar" name="searchBar" placeholder="Digite um título para buscar..." type="input">
+                <input id="searchBar" class="searchBar" name="searchBar" placeholder="Digite um título para buscar..."
+                    type="input">
                 <button id="lupa" onclick="searchCard()"><img src="./images/search.png" alt="lupa"></button>
-                <button id="erase" name='erase' onclick="limparSearchBar()"><img src="./images/erase.png" alt="lupa"></button>
+                <button id="erase" name='erase' onclick="limparSearchBar()"><img src="./images/erase.png"
+                        alt="lupa"></button>
             </div>
 
             <div class="info">
@@ -103,7 +106,7 @@
                             <button id="edit" type="button"><img src="./images/edit.png" alt="Editar"></button>
                             <a href="https://www.youtube.com/shorts/YjVAFOR2sno" target="_blank">
                                 <button id="video" type="button">
-                                <img src="./images/video.png" alt="Remover">
+                                    <img src="./images/video.png" alt="Remover">
                                 </button>
                             </a>
                         </div>
@@ -112,6 +115,6 @@
             </div>
         </div>
     </main>
-    <!-- <script src="index.js"></script> -->
 </body>
+
 </html>

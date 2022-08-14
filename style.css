@@ -20,16 +20,17 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px;
+  margin: 10px;
 }
 
 /* Left Container */
 
 /* Title */
 .left-container {
-  max-width: 100vh;
-  min-width: 34vh;
-  height: 100%;
+  max-width: fit-content;
+  min-width: min-content;
+  max-height: fit-content;
+  min-height: min-content;
 }
 
 .left-container .header {
@@ -39,10 +40,11 @@ main {
   padding: 50px;
 }
 
-img {
-  max-width: 100%;
-  width: 70px;
-  height: 70px;
+.logo-image img {
+  max-width: 70px;
+  max-height: 70px;
+  min-width: 50px;
+  min-height: 50px;
   object-fit: cover;
 }
 
@@ -94,13 +96,16 @@ span {
   padding-top: 20px;
 }
 
+#video-input {
+  margin-bottom: 20px;
+}
+
 /* Buttons */
-.buttons {
+#buttons {
   /* left container */
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-top: 20px;
 }
 
 /* Right Container */
@@ -108,7 +113,10 @@ span {
 /* General info */
 .right-container {
   background-color: #e2e2e2;
-  width: 100%;
+  min-width: 60%;
+  max-width: 90%;
+  max-height: 100%;
+  min-height: fit-content;
 }
 
 /* Totals Boxes */
@@ -157,24 +165,26 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px 10px 20px 10px;
+  margin: 10px 10px 20px 10px;
+  padding: 0;
 }
 
 .search button {
   cursor: pointer;
   width: 35px;
-  height: 30px;
+  height: 33px;
   border-radius: 15px 15px 15px 15px;
+  object-fit:cover;
 }
 
 .search button img {
-  width: 25px;
-  height: 20px;
+  width: 20px;
+  height: 25px;
   object-fit: contain;
 }
 
 .search input {
-  width: 360px;
+  min-width: 400px;
   border-radius: 15px 15px 15px 15px;
 }
 
@@ -182,14 +192,19 @@ span {
 
 .info {
   padding: 3px;
+  min-width: fit-content;
+  max-height: fit-content;
+  min-height: fit-content;
 }
 
 #cards {
   border-radius: 15px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   margin: 0px;
   overflow-y: scroll;
+  height: fit-content;
   max-height: 600px;
+  min-height: 10px;
 }
 
 #cards #data {
@@ -235,8 +250,10 @@ span {
 #card-botton button {
   margin-left: 5px;
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 37px;
+  height: 37px;
+  margin: 0;
+  padding: 0;
   border-radius: 15px 15px 15px 15px;
 }
 
