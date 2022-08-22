@@ -30,6 +30,7 @@ var id = 2,
     fullStack = 0,
     softSkill = 0,
     total = 0;
+    formListener = true;
 
 // Carregar dados do Local Storage
 cards = JSON.parse(localStorage.getItem("Cards"));
@@ -81,7 +82,10 @@ function updateCardsIndicativos(array) {
 // ========= Botao Salvar ========= //
 botaoSalvar = document.addEventListener('submit', function (e) {
     e.preventDefault();
-    displayCard();
+    if (formListener != false) {
+        
+        displayCard();
+    }
 });
 
 // ======= Criar elemento, enviar para o Local Storage e imprimir na tela ====== //
@@ -256,15 +260,16 @@ function saveEdition(cardIndex) {
                 `Você deseja salvar as edições feitas na dica de título: ${card.titulo}.\n\nClique em:\n\nCancelar: Para cancelar a edição feita\nOK: Para confirmar o a edição`
             );
         }
+        
+        var titulo = document.getElementById("title-input").value;
+        var skill = document.getElementById("skill-input").value;
+        //pegar o valor do meu select
+        var tagCategoria = document.querySelector("#category-input");
+        var categoria = tagCategoria.options[tagCategoria.selectedIndex].text;
+        var descricao = document.getElementById("description-input").value;
+        var video = document.getElementById("video-input").value;
 
         if (index == cardIndex && confirm == true) {
-            var titulo = document.getElementById("title-input").value;
-            var skill = document.getElementById("skill-input").value;
-            //pegar o valor do meu select
-            var tagCategoria = document.querySelector("#category-input");
-            var categoria = tagCategoria.options[tagCategoria.selectedIndex].text;
-            var descricao = document.getElementById("description-input").value;
-            var video = document.getElementById("video-input").value;
 
             // Atualizar os valores do card
             card.titulo = titulo;
@@ -278,25 +283,27 @@ function saveEdition(cardIndex) {
             carregarElementosNaTela(cards);
             updateCardsIndicativos(cards);
 
-            // Limpar os dados dos campos do formulario
-            document.querySelector("[id='title-input']").value = ``;
-            document.querySelector("[id='skill-input']").value = ``;
-            document.querySelector(
-                "[id='category-input']"
-            ).value = ``;
-            document.querySelector(
-                "[id='description-input']"
-            ).value = ``;
-            document.querySelector("[id='video-input']").value = ``;
-
-            //Atualizar os botoes
-            let formButtons = document.getElementById('buttons');
-            formButtons.innerHTML = '';
-            formButtons.innerHTML += `<button class="btn-erase" type="reset">Limpar</button>
-            <button id="btn-save1" class="btn-save" type="submit" onclick="displayCard()">Salvar</button>`;
         } else if (index == cardIndex && confirm == false) {
             window.alert(`As edições da dica de título: ${card.titulo} estão sendo canceladas.`)
+            formListener = false;
         }
+        
+        // Limpar os dados dos campos do formulario
+        document.querySelector("[id='title-input']").value = ``;
+        document.querySelector("[id='skill-input']").value = ``;
+        document.querySelector(
+            "[id='category-input']"
+        ).value = ``;
+        document.querySelector(
+            "[id='description-input']"
+        ).value = ``;
+        document.querySelector("[id='video-input']").value = ``;
+
+        //Atualizar os botoes
+        let formButtons = document.getElementById('buttons');
+        formButtons.innerHTML = '';
+        formButtons.innerHTML += `<button class="btn-erase" type="reset">Limpar</button>
+        <button id="btn-save1" class="btn-save" type="submit" onclick="displayCard()">Salvar</button>`;
     });
 
 }

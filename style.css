@@ -72,9 +72,14 @@ main {
   border: 0;
 }
 
+.main-form input, select {
+  border-radius: 10px;
+}
+
 #description-input {
   resize: none;
     border: 1px solid #ccc;
+    border-radius: 10px;
     z-index: 0;
     font-family: 'Verdana';
     font-size: 0.875em;
@@ -101,6 +106,7 @@ span {
 }
 
 #video-input {
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
@@ -110,6 +116,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-radius: 10px;
 }
 
 /* Right Container */
