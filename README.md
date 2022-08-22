@@ -53,3 +53,7 @@ The image below shows the application screen.
 
 
 ![Screen Shot 2022-08-14 at 3 30 00 PM](https://user-images.githubusercontent.com/77552461/184550951-42db1068-21ff-436d-99f9-ca04c78cf60f.png)
+
+This flow chart below shows how the application works in frontend and backend.
+
+![Screen Shot 2022-08-16 at 11 59 56 AM](https://user-images.githubusercontent.com/77552461/184913959-6aad6713-7485-4c52-b59a-9a5ddd9baeab.png)
